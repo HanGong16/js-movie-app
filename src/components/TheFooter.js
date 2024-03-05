@@ -1,4 +1,5 @@
 import { Component } from '../core/heropy.js';
+import aboutStore from '../store/about.js';
 
 export default class TheFooter extends Component {
   constructor() {
@@ -7,10 +8,11 @@ export default class TheFooter extends Component {
     });
   }
   render() {
+    const { repository, github } = aboutStore.state;
     this.el.innerHTML = /*HTML*/ `
-    <div><a href='https://github.com/HanGong16/js-movie-app.git'>Github Repository</a></div>
+    <div><a href='${repository}'>Github Repository</a></div>
     <div>
-     <a href='https://github.com/HanGong16'>
+     <a href='${github}'>
      ${new Date().getFullYear()} HEROPY
      </a>
     </div>
