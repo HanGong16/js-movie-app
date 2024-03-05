@@ -1,7 +1,6 @@
 import { Store } from '../core/heropy.js';
-import config from '../apikey.js';
 
-const API_KEY = config.API_KEY;
+const { API_KEY } = process.env;
 const store = new Store({
   searchText: '',
   page: 1,
