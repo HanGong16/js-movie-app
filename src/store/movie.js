@@ -43,7 +43,7 @@ export const searchMovies = async (page) => {
 export const getMovieDetails = async (id) => {
   try {
     const res = await fetch(
-      `https://www.omdbapi.com?apikey=${API_KEY}&i=${id}&ploat=full`
+      `https://www.omdbapi.com?apikey=${API_KEY}&i=${id}&plot=full`
     );
     store.state.movie = await res.json();
   } catch (error) {
