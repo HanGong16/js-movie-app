@@ -3,11 +3,20 @@ import movieStore, { getMovieDetails } from '../store/movie.js';
 
 export default class Movie extends Component {
   async render() {
+    this.el.classList.add('the-movie', 'container');
+    this.el.innerHTML = /*HTML*/ `
+    <div class='poster skeleton'></div>
+    <div class='specs'>
+    <div class='title skeleton'></div>
+    <div class='labels skeleton'></div>
+    <div class='plot skeleton'></div>
+    </div>
+    `;
     await getMovieDetails(history.state.id);
     console.log(movieStore.state.movie);
     const { movie } = movieStore.state;
     const bigPoster = movie.Poster.replace('SX300', 'SX700');
-    this.el.classList.add('the-movie', 'container');
+
     this.el.innerHTML = /*HTML*/ `
     <div class='poster'  style="background-image: url(${bigPoster});"></div>
     <div class='specs'>
