@@ -28,7 +28,8 @@ function routeRender(routes) {
     new RegExp(`${route.path}/?$`).test(hash)
   );
   routerView.innerHTML = '';
-  routerView.append(new currentRoute.component().el) / window.scrollTo(0, 0);
+  routerView.append(new currentRoute.component().el);
+  window.scrollTo(0, 0);
 }
 export function createRouter(routes) {
   return function () {
