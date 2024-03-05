@@ -21,6 +21,9 @@ export default class TheHeader extends Component {
         ],
       },
     });
+    window.addEventListener('popstate', () => {
+      this.render();
+    });
   }
   render() {
     this.el.classList.add('header');
@@ -28,9 +31,16 @@ export default class TheHeader extends Component {
     <a hre='#/' class='logo'><span>OMDBAPI</span>.COM</a>
     <nav>
       <ul>
-        ${this.state.menus.map((menu) => {
-          return `<li><a href='${menu.href}'>${menu.name}</a></li>`.join('');
-        })}
+        ${this.state.menus
+          .map((menu) => {
+            const href = menu.href.split('?')[0];
+            const hash = location.hash.split('?')[0];
+            const isActive = href === hash;
+            return `<li>
+          <a class="${isActive ? 'active' : ''}"
+          href='${menu.href}'>${menu.name}</a></li>`;
+          })
+          .join('')}
          
   </ul>
   <a href='#/about' class='user'>
