@@ -1,4 +1,4 @@
-import { Store } from '../core/heropy.js';
+import { Store } from '../core/heropy';
 
 export interface SimpleMovie {
   Title: string
