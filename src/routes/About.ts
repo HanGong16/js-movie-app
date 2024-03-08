@@ -1,5 +1,5 @@
-import { Component } from '../core/heropy.js';
-import aboutStore from '../store/about.js';
+import { Component } from '../core/heropy';
+import aboutStore from '../store/about';
 export default class About extends Component {
   render() {
     const { notion, email, photo, github, name } = aboutStore.state;

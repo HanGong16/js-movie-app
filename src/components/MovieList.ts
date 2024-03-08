@@ -1,6 +1,6 @@
-import { Component } from '../core/heropy.js';
-import movieStore from '../store/movie.js';
-import MovieItem from './MovieItem.js';
+import { Component } from '../core/heropy';
+import movieStore from '../store/movie';
+import MovieItem from './MovieItem';
 export default class MovieList extends Component {
   constructor() {
     super();
@@ -30,9 +30,9 @@ export default class MovieList extends Component {
       ...movieStore.state.movies.map((movie) => new MovieItem({ movie }).el)
     );
 
-    const loaderEl = this.el.querySelector('.the-loader');
+    const loaderEl = this.el.querySelector('.the-loader') 
     movieStore.state.loading
-      ? loaderEl.classList.remove('hide')
-      : loaderEl.classList.add('hide');
+      ? loaderEl?.classList.remove('hide')
+      : loaderEl?.classList.add('hide');
   }
 }

@@ -2,6 +2,7 @@
   "name": "movie-app",
   "version": "1.0.0",
   "description": "",
+  "type":"module",
   "scripts": {
     "dev": "parcel ./index.html",
     "build": "parcel build ./index.html",
@@ -11,10 +12,15 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/node-fetch": "^2.6.11",
     "parcel": "^2.11.0",
+    "typescript": "^5.4.2",
     "vercel": "^33.5.3"
   },
   "dependencies": {
+    "@nestjs/elasticsearch": "^10.0.1",
+    "@types/node": "^20.11.25",
+    "electron": "^29.1.1",
     "node-fetch": "^2.7.0"
   }
 }
