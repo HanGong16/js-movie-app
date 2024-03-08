@@ -1,6 +1,6 @@
 import { Store } from '../core/heropy.js';
 
-interface SimpleMovie {
+export interface SimpleMovie {
   Title: string
   Year: string
   imdbID: string
