@@ -1,6 +1,6 @@
-import { Component } from '../core/heropy.js';
-import movieStore from '../store/movie.js';
-import MovieItem from './MovieItem.js';
+import { Component } from '../core/heropy';
+import movieStore from '../store/movie';
+import MovieItem from './MovieItem';
 export default class MovieList extends Component {
   constructor() {
     super();
